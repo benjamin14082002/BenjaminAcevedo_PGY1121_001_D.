@@ -1,0 +1,163 @@
+body {
+    background-image: url(../imagenes/fondo.jpg);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+}
+
+header {
+    background-color: #b9cce9a8;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #000000a9;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.boton-regresar {
+    display: inline-block;  
+    background-color: #b9cce9a8;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.boton-regresar:hover {
+    background-color: #0d4d92;
+}
+
+.card{
+    box-shadow: 0px 0px 1px #000000;
+}
+
+footer {
+    background-color: #000000a9;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.Btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    /* overflow: hidden; */
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .svgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    letter-spacing: 0.8px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    border: 1px solid rgba(156, 156, 156, 0.466);
+  }
+  
+  .BG {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #075e54;
+    z-index: -1;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  
+  .Btn:hover .BG {
+    transform: rotate(35deg);
+    transform-origin: bottom;
+  }
+  
+  .Btn:hover .svgContainer {
+    background-color: rgba(156, 156, 156, 0.466);
+    backdrop-filter: blur(4px);
+  }
+
+
+  /* From uiverse.io by @alshahwan */
+.ig {
+    background-color: #fff;
+    border: 1px solid #bc2a8d;
+    padding: 5px;
+    position: relative;
+    width: 7.2em;
+    height: 2em;
+    transition: 0.5s;
+    font-size: 17px;
+    border-radius: 0.4em;
+  }
+  
+  .ig p {
+    position: absolute;
+    top: 0.4em;
+    left: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    color: #bc2a8d;
+  }
+  
+  .ig svg {
+    position: absolute;
+    top: 0.45em;
+    right: 0.5em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1em;
+    fill: #fff
+  }
+  
+  .ig:hover p {
+    left: 0.6em;
+    color: #fff
+  }
+  
+  .ig:hover svg {
+    opacity: 1;
+  }
+  
+  .ig:hover {
+    background-color: #bc2a8d;
+  }
+  
+  .iconos{
+    display: flex;
+    justify-content: center;
+  
+  }
+
+.iconowsp{
+  display: flex;
+  width: 50px;
+  
+}

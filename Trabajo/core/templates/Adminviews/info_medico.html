@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Médico</title>
+</head>
+<body>
+    <h1>{{ medico.nombre }}</h1>
+    <p>Especialidad: {{ medico.especialidad }}</p>
+    <p>Horas disponibles: {{ medico.horas_disponibles }}</p>
+
+    <h2>Horarios Disponibles</h2>
+    <ul>
+        {% for horario in horarios %}
+            <li><a href="{% url 'reservar_hora' medico.id horario.id %}">{{ horario.fecha_hora }} - ${{ horario.precio }}</a></li>
+        {% endfor %}
+    </ul>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Carrito de Compras</h1>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="carritoBody">
+                <!-- Contenido del carrito se llenará dinámicamente -->
+            </tbody>
+        </table>
+        <h3>Total: $<span id="total"></span></h3>
+        <a href="{% url 'checkout' %}" class="btn btn-primary">Proceder al Pago</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const carritoBody = document.getElementById('carritoBody');
+            let total = 0;
+
+            carrito.forEach(item => {
+                const row = document.createElement('tr');
+                const fecha = new Date(item.fecha);
+                const precio = fecha.getDay() >= 1 && fecha.getDay() <= 5 ? 35000 : 40000;
+                total += precio;
+
+                row.innerHTML = `
+                    <td>${item.fecha}</td>
+                    <td>${item.hora}</td>
+                    <td>${precio}</td>
+                `;
+
+                carritoBody.appendChild(row); 
+            });
+
+            document.getElementById('total').innerText = total;
+        });
+    </script>
+    <script src="{% static 'js/reserva.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}

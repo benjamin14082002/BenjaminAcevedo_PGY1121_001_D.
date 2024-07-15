@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Médicos</title>
+</head>
+<body>
+    <h1>Lista de Médicos</h1>
+    <ul>
+        {% for medico in medicos %}
+            <li><a href="{% url 'detalle_medico' medico.id %}">{{ medico.nombre }} - {{ medico.especialidad }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'carrito_compras' %}">Ver Carrito de Compras</a>
+</body>
+</html>
